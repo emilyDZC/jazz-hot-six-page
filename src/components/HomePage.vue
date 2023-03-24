@@ -30,4 +30,8 @@ export default {
     .homepage {
         font-weight: 700;
     }
+
+    img {
+        max-width: 100%;
+    }
 </style>
