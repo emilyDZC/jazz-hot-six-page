@@ -3,12 +3,13 @@
         <img src="../assets/jazz-hot-six.jpeg" width="500"/>
         <h1>Gig List</h1>
 
-        <div>Saturday 25th March - Trippets</div>
-        <div>Tuesday 4th April - Dorothy Pax</div>
-        <div>Saturday 22nd April - Trippets</div>
-        <div>Saturday 29th April - Sharrow Cemetery</div>
-        <div>Tuesday 2nd May - Dorothy Pax</div>
-        <div>Saturday 6th May - Balboa dancers</div>
+        <div>Saturday 29th April - Sharrow Cemetery (all)</div>
+        <div>Tuesday 2nd May - Dorothy Pax (all)</div>
+        <div>Saturday 6th May - Balboa dancers (no Emily)</div>
+        <div>Wednesday 17th May - Big Swing (all)</div>
+        <div>Friday 19th May - Trippets (no Andrew or Kate)</div>
+        <div>Sunday 28th May - Leopold Square (no Kate or Emily)</div>
+        <div>Saturday 3rd June - Trippets</div>
         <div>Tuesday 6th June - Dorothy Pax</div>
         <div>Tuesday 4th July - Dorothy Pax</div>
         <div>Sunday 23rd July - Pax in the Park (Tramlines Weekend) - afternoon</div>
