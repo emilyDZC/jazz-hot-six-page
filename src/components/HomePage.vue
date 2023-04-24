@@ -9,7 +9,7 @@
         <div>Wednesday 17th May - Big Swing (all)</div>
         <div>Friday 19th May - Trippets (no Andrew or Kate)</div>
         <div>Sunday 28th May - Leopold Square (no Kate or Emily)</div>
-        <div>Saturday 3rd June - Trippets</div>
+        <div>Saturday 3rd June - Trippets (no Emily)</div>
         <div>Tuesday 6th June - Dorothy Pax</div>
         <div>Tuesday 4th July - Dorothy Pax</div>
         <div>Sunday 23rd July - Pax in the Park (Tramlines Weekend) - afternoon</div>
