@@ -12,7 +12,7 @@
         <div>Saturday 3rd June - Trippets (no Emily)</div>
         <div>Tuesday 6th June - Dorothy Pax</div>
         <div>Tuesday 4th July - Dorothy Pax</div>
-        <div>Sunday 23rd July - Pax in the Park (Tramlines Weekend) - afternoon</div>
+        <div>Sunday 23rd July - Pax in the Park (Tramlines Weekend) - afternoon (no Shez)</div>
 
         <br/>
         <br/>
