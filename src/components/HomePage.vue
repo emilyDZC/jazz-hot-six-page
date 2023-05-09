@@ -3,9 +3,9 @@
         <img src="../assets/jazz-hot-six.jpeg" width="500"/>
         <h1>Gig List</h1>
 
-        <div>Saturday 29th April - Sharrow Cemetery (all)</div>
-        <div>Tuesday 2nd May - Dorothy Pax (all)</div>
-        <div>Saturday 6th May - Balboa dancers (no Emily)</div>
+        <div><s>Saturday 29th April - Sharrow Cemetery (all)</s></div>
+        <div><s>Tuesday 2nd May - Dorothy Pax (all)</s></div>
+        <div><s>Saturday 6th May - Balboa dancers (no Emily)</s></div>
         <div>Wednesday 17th May - Big Swing (all)</div>
         <div>Friday 19th May - Trippets (no Andrew or Kate. Mike Fleming on Bass)</div>
         <div>Sunday 28th May - Leopold Square (no Kate or Emily. Maybe Steve Brickley - TBC)</div>
