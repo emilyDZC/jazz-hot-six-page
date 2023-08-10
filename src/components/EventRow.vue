@@ -1,11 +1,6 @@
 <template>
     <div class="event-row">
-        <s v-if="past">
-            {{ date }} - {{ venue }} ({{ players }})
-        </s>
-        <template v-else>
-            {{ date }} - {{ venue }} ({{ players }})
-        </template>
+        {{ date }} - {{ venue }} ({{ players }})
     </div>
 </template>
 
@@ -13,7 +8,6 @@
 export default {
     name: 'EventRow',
     props: {
-        past: Boolean,
         date: String,
         venue: String,
         players: String

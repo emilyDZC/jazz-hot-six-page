@@ -1,25 +1,34 @@
 <template>
     <div class="homepage">
-        <div class="left">
-            <img class="pic" src="../assets/martin1.jpeg" width="200" />
-            <img class="pic" src="../assets/emily1.jpeg" width="200" />
-            <img class="pic" src="../assets/jazz-hot-six-1.jpeg" width="400" />
-        </div>
-        <div class="middle">
-            <img src="../assets/jazz-hot-six.jpeg" width="300"/>
-            <h1 class="title">Gig List</h1>
+        <div class="full-screen-view">
+            <div v-if="!isMobile" class="left">
+                <img class="pic" src="../assets/martin1.jpeg" width="200" />
+                <img class="pic" src="../assets/emily1.jpeg" width="200" />
+                <img class="pic" src="../assets/jazz-hot-six-1.jpeg" width="400" />
+            </div>
+            <div class="middle">
+                <img src="../assets/jazz-hot-six.jpeg" width="300"/>
+                <h1 class="title">Upcoming gigs</h1>
 
-            <EventRow v-for="event in events" :date="event.date" :venue="event.venue" :players="event.players" :past="event.past" :key="event.date"/>
-        </div>
-        <div class="right">
-            <img class="pic" src="../assets/kate1.jpeg" width="200" />
-            <img class="pic" src="../assets/andrew1.jpeg" width="200" />
-        </div>
+                <EventRow v-for="event in upcomingEvents" :date="formatDate(event.date)" :venue="event.venue" :players="event.players" :key="event.date"/>
 
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+                <h1 class="title">Previous gigs</h1>
+                <EventRow v-for="event in pastEvents" :date="formatDate(event.date)" :venue="event.venue" :players="event.players" :key="event.date"/>
+
+            </div>
+            <div v-if="!isMobile" class="right">
+                <img class="pic" src="../assets/kate1.jpeg" width="200" />
+                <img class="pic" src="../assets/andrew1.jpeg" width="200" />
+            </div>
+        </div>
+        <div v-if="isMobile">
+            <h1 class="title">Gallery</h1>
+            <img class="pic-small" src="../assets/martin1.jpeg" height="100" />
+            <img class="pic-small" src="../assets/kate1.jpeg" height="100" />
+            <img class="pic-small" src="../assets/emily1.jpeg" height="100" />
+            <img class="pic-small" src="../assets/andrew1.jpeg" height="100" />
+            <img class="pic-small" src="../assets/jazz-hot-six-1.jpeg" height="100" />
+        </div>
     </div>
 </template>
 
@@ -33,36 +42,68 @@ export default {
         return {
             events: [
                 {
-                    date: "Tuesday 6th June",
+                    date: "2023-06-06",
                     venue: "Dorothy Pax",
                     players: "no Shez",
                     past: true
                 },
                 {
-                    date: "Tuesday 4th July",
+                    date: "2023-07-04",
                     venue: "Dorothy Pax",
                     players: "all",
                     past: true
                 },
                 {
-                    date: "Sunday 23rd July",
+                    date: "2023-07-23",
                     venue: "Pax in the Park (Tramlines Weekend) - afternoon",
                     players: "all",
                     past: true
                 },
                 {
-                    date: "Tuesday 5th September",
+                    date: "2023-09-05",
                     venue: "Dorothy Pax",
                     players: "all",
                     past: false
                 },
                 {
-                    date: "Saturday 7th October",
+                    date: "2023-10-07",
                     venue: "TBC",
                     players: "all",
                     past: false
                 },
-            ]
+            ],
+            upcomingEvents: [],
+            pastEvents: []
+        }
+    },
+    created() {
+        this.upcomingEvents = this.getUpcomingEvents();
+        this.pastEvents = this.getPastEvents();
+    },
+    computed: {
+        isMobile() {
+            return screen.width <= 375;
+        },
+    },
+    methods: {
+        getUpcomingEvents() {
+            return this.events.filter(event => {
+                let eventDate = new Date(event.date);
+                let today = new Date();
+                return eventDate >= today
+            })
+        },
+        getPastEvents() {
+             return this.events.filter(event => {
+                let eventDate = new Date(event.date);
+                let today = new Date();
+                return eventDate <= today
+            }).reverse()
+        },
+
+        formatDate(date) {
+            let eventDate = new Date(date);
+            return eventDate.toLocaleDateString('en-GB', {weekday: 'long', month: 'long', day: "numeric"})
         }
     }
 }
@@ -75,6 +116,9 @@ export default {
 
     .homepage {
         font-weight: 700;
+    }
+
+    .full-screen-view {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -97,6 +141,11 @@ export default {
 
     .pic {
         border: 5px solid beige;
+        margin: 5px;
+    }
+
+    .pic-small {
+        border: 2px solid beige;
         margin: 5px;
     }
 </style>
