@@ -8,12 +8,14 @@
             </div>
             <div class="middle">
                 <img src="../assets/jazz-hot-six.jpeg" width="300"/>
-                <h1 class="title">Upcoming gigs</h1>
+                <!-- <h1 class="title">Upcoming gigs</h1> -->
 
-                <EventRow v-for="event in upcomingEvents" :date="formatDate(event.date)" :venue="event.venue" :players="event.players" :key="event.date"/>
+                <p class="yellow-text">Come and see us at the <a href="https://dorothypax.com/">Dorothy Pax</a> in Sheffield on the first Tuesday of every month!!</p>
+                <p class="yellow-text smaller">Free entry, 8pm start.</p>
+                <!-- <EventRow v-for="event in upcomingEvents" :date="formatDate(event.date)" :venue="event.venue" :players="event.players" :key="event.date"/> -->
 
-                <h1 class="title">Previous gigs</h1>
-                <EventRow v-for="event in pastEvents" :date="formatDate(event.date)" :venue="event.venue" :players="event.players" :key="event.date"/>
+                <!-- <h1 class="title">Previous gigs</h1> -->
+                <!-- <EventRow v-for="event in pastEvents" :date="formatDate(event.date)" :venue="event.venue" :players="event.players" :key="event.date"/> -->
 
             </div>
             <div v-if="!isMobile" class="right">
@@ -33,11 +35,11 @@
 </template>
 
 <script>
-import EventRow from "./EventRow.vue"
+// import EventRow from "./EventRow.vue"
 
 export default {
     name: 'HelloWorld',
-    components: { EventRow },
+    // components: { EventRow },
     data() {
         return {
             events: [
@@ -133,6 +135,11 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+        flex: 5;
+    }
+
+    .middle {
+        flex: 5;
     }
 
     img {
@@ -147,5 +154,23 @@ export default {
     .pic-small {
         border: 2px solid beige;
         margin: 5px;
+    }
+
+    .yellow-text {
+        color: rgb(250, 174, 51);
+        font-size: 1.7rem;
+    }
+
+    .smaller {
+        font-size: 1.3rem;
+    }
+
+    a, a:hover {
+        text-decoration: none;
+        color: rgb(250, 174, 51);
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 </style>
